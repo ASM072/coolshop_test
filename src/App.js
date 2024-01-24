@@ -1,25 +1,63 @@
-import logo from './logo.svg';
-import './App.css';
+import React, { useState } from 'react';
 
-function App() {
-  return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+const Calculator = () => {
+  const [inputRow, setinputRow] = useState([
+    { id: 0, value: 0, sign: '+', enabled: true },
+  ] );
+  
+  const handleEnable = () =>
+  {
+    
+  }
+  
+  const handleRemove = () =>
+  {
+    
+  }
+
+  const handleAdd = () =>
+  {
+    
+  }
+
+  const handleValue = () =>
+  {
+    
+  };
+
+  const calculateTotal = () =>
+  {
+    
+  };
+
+  const signHandler = () =>
+  {
+    
+  }
+return (
+  <div>
+    <button onClick={handleAdd}>Add Row</button><br></br>
+    <select
+      value={(0)}
+      onChange={(e) => signHandler()}>
+      <option value="+">+</option>
+      <option value="-">-</option>
+    </select>
+    <input
+      type="number"
+      value={(0)}
+      onChange={(e) => handleValue()}/>
+    <button onClick={() => handleEnable()}>
+      
+    </button>
+    <button onClick={() => handleRemove()}>Remove</button>
+    
+    <button onClick={handleAdd}>Add Row</button>
+    <div>
+      <strong>Total:</strong> {calculateTotal()}
     </div>
+  </div>
   );
-}
+};
 
-export default App;
+export default Calculator;
