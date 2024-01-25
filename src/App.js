@@ -12,7 +12,8 @@ const Calculator = () => {
   
   const handleRemove = () =>
   {
-    
+        setinputRow((previnputRow) => previnputRow.filter((row) => row.id !== id));
+
   }
 
   const handleAdd = () =>
@@ -25,7 +26,9 @@ const Calculator = () => {
 
   const handleValue = () =>
   {
-    
+    setinputRow((previnputRow) =>
+      previnputRow.map((row) => (row.id === id ? { ...row, value } : row))
+    );
   };
 
   const calculateTotal = () =>
@@ -35,7 +38,9 @@ const Calculator = () => {
 
   const signHandler = () =>
   {
-    
+    setinputRow((previnputRow) =>
+      previnputRow.map((row) => (row.id === id ? { ...row, sign } : row))
+    );
   }
 return (
   <div>
