@@ -1,11 +1,14 @@
 import React, { useState } from 'react';
 import { evaluate } from 'mathjs';
-import './styles.scss'
+import '../Styles/styles.scss'
+
+
 const Calculator = () => {
   const [inputRow, setinputRow] = useState([
     { id: 0, value: 0, sign: '+', enabled: true },
   ] );
   
+  //Enable and Disable State Handler 
   const handleEnable = (id, ) =>
   {
     setinputRow((previnputRow) =>
@@ -13,12 +16,14 @@ const Calculator = () => {
     );
   }
   
+  //Remove row state handler
   const handleRemove = (id) =>
   {
     setinputRow((previnputRow) => previnputRow.filter((row) => row.id !== id));
 
   }
 
+  //Add row state handler
   const handleAdd = () =>
   {
     setinputRow((previnputRow) => [
@@ -27,6 +32,7 @@ const Calculator = () => {
     ]);
   }
 
+  //input value state handler
   const handleValue = (id, value) =>
   {
     setinputRow((previnputRow) =>
@@ -34,6 +40,7 @@ const Calculator = () => {
     );
   };
 
+  //calculate total
   const calculateTotal = () =>
   {
     const enabledRow = inputRow.filter((row) => row.enabled);
@@ -43,12 +50,15 @@ const Calculator = () => {
     return evaluate(addition);
   };
 
+  //sign state handler
   const signHandler = (id, sign) =>
   {
     setinputRow((previnputRow) =>
       previnputRow.map((row) => (row.id === id ? { ...row, sign } : row))
     );
   }
+
+
 return (
   <div className="calculator" >
     <h1>CoolShop Test</h1>
