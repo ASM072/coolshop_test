@@ -1,7 +1,11 @@
 .calculator{
     padding: 10px;
     font-size: large;
-    flex: auto;
     display: grid;
     justify-content: center;
+}
+
+button{
+    border-radius: 24px;
+    border-color: black;
 }

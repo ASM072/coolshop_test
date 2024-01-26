@@ -82,7 +82,7 @@ return (
         </button>
         <button onClick={() => handleRemove(row.id)}>Remove</button>
         </div>
-      ))}
+      ))}<br></br>
       <div>
         <strong>Total:</strong> {calculateTotal()}
       </div>
